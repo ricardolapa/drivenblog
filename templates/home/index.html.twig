@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ controller_name }}{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-5">Blog Posts</h1>
+        <hr class="my-4">
+        <p>Driven Challenge from Ricardo Lapa</p>
+        <small>&copy;RLapa | 24/Aug/2018 - {{ "now"|date("d/M/Y") }}</small>
+    </div>
+
+    {% for post in posts %}
+        <blog-article 
+            :title="'{{post.title | e}}'"
+            :description="'{{post.description | e}}'"
+            :author="'{{post.author | e}}'"
+        >
+        </blog-article>
+    {% endfor %}
+</div>
+
+{% endblock %}
