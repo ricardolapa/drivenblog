@@ -1,0 +1,19 @@
+<IfModule mod_rewrite.c>
+
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteCond %{REQUEST_FILENAME} !*
+    RewriteCond %{REQUEST_FILENAME} /build/*
+    RewriteCond %{REQUEST_FILENAME} !/build/*
+    RewriteRule !^index.php index.php [L,NC]
+
+    RewriteEngine On
+
+    # Routes
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+</IfModule>
