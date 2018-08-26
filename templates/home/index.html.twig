@@ -14,11 +14,13 @@
 
     {% for post in posts %}
         <blog-article 
-            :title="'{{post.title | e}}'"
-            :description="'{{post.description | e}}'"
-            :author="'{{post.author | e}}'"
+            :title="{{ post.title | json_encode() }}"
+            :description="{{ post.description | json_encode() }}"
+            :author="{{ post.author | json_encode() }}"
+            :date="{{ post.date | json_encode() }}"
         >
         </blog-article>
+
     {% endfor %}
 </div>
 

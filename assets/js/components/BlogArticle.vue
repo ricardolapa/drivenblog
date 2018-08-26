@@ -1,11 +1,11 @@
 <template>
     <div>
-        <div class="card" >
+        <div class="card" style="margin-bottom:40px">
             <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
-            <div class="card-body">
-                <h5 class="card-title">{{ title }}</h5>
+            <div class="card-body" style="padding:50px">
+                <h2 class="card-title">{{ title }}</h2>
                 <p class="card-text">{{ description }}</p>
-                <small>{{ author }}</small>
+                <small>Posted at {{ date.date }} | by: {{ author }}</small>
             </div>
         </div>
     </div>
@@ -15,6 +15,7 @@
     export default {
         name: "blog-article",
         props: [
+            // 'post',
             'title',
             'image',
             'description',
@@ -29,5 +30,5 @@
 </script>
  
 <style scoped>
- 
+
 </style>
