@@ -6,7 +6,7 @@
 
     RewriteCond %{REQUEST_FILENAME} -f
     RewriteCond %{REQUEST_FILENAME} !/public/*
-    RewriteCond %{REQUEST_FILENAME} /build/* /public/build/*
+    RewriteCond %{REQUEST_FILENAME} /build/*
     RewriteCond %{REQUEST_FILENAME} !/public/build/*
     RewriteRule !^index.php /public/index.php [L,NC]
 
