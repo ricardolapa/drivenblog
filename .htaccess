@@ -4,6 +4,11 @@
         Options -MultiViews
     </IfModule>
 
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteCond %{REQUEST_FILENAME} !/public/*
+    RewriteCond %{REQUEST_FILENAME} !/public/build/*
+    RewriteRule !^index.php /public/index.php [L,NC]
+
     RewriteEngine On
 
     # Routes
